@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>teams</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<ion-list>
+<!--List of CFL teams is taken from the CFL API using the teams.service service-->
+  <ion-item *ngFor="let teams of TeamData">
+    <ion-item-group>
+      <ion-item-divider>
+        <img src={{teams.images}} width="50" height="50"><!--Displays the team's logos, taken from the api, they are then resized to be more in line with the rest of the page-->
+      </ion-item-divider>
+    <ion-item-divider>
+     <ion-text color ="dark"><p>Team <br>Name: </p></ion-text> <ion-label color = "dark">{{teams.full_name}}</ion-label><!--Displays the team name, data taken from the api-->
+      </ion-item-divider>
+      <ion-item-divider>
+        <ion-text><p>Stadium <br>Name: </p></ion-text> <ion-label>{{teams.venue_name}}</ion-label><!--Displays the home stadium for each team, data taken from the api-->
+      </ion-item-divider>
+      <ion-item-divider>
+        <ion-text><p>Division: </p></ion-text>  <ion-label>{{teams.division_name}}</ion-label><!--Displays if the team is either in the East or West division, data taken from api-->
+      </ion-item-divider>
+    </ion-item-group>
+  </ion-item>
+
+</ion-list>
+
+<!--Tabs at bottom of page to provide navigation, teams page is replaced with a path back to the home screen-->
+  <ion-tabs>
+    
+  </ion-tabs>
+</ion-content>
+<ion-tab-bar slot="bottom">
+  <!--Button is pressed which calls the respective function to change the page-->
+        <ion-tab-button (click)="openHome()">
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-label>Home</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button (click)="openTeamRecords()">
+        <ion-icon name="trophy-outline"></ion-icon>
+        <ion-label>Team Records</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button (click)="openInfo()">
+        <ion-icon name="information-circle"></ion-icon>
+        <ion-label>Info</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>

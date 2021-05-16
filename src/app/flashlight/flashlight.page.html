@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Use the Flashlight!</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-text color="dark">
+<h2>Light up the dark!</h2>
+<h4>It is a long standing tradition for games taking place in the cold dark winter nights of Canada to be illuminated by the lights of the crowd, do your part with the flashlight provided!</h4>
+  </ion-text>
+
+<ion-button ion-item (click)="Flashlight()">Flashlight</ion-button><!--Calls the function that toggles the flashlight on and off-->
+
+
+</ion-content>
+<!--Tabs for navigation, functions to change page are called when button is pressed-->
+<ion-toolbar>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+  
+      <ion-tab-button (click)="openTeams()">
+        <ion-icon name="shirt-outline"></ion-icon>
+        <ion-label>Teams</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button (click)="openTeamRecords()">
+        <ion-icon name="trophy-outline"></ion-icon>
+        <ion-label>Team Records</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button (click)="openHome()">
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-label>Home</ion-label>
+      </ion-tab-button>
+
+    </ion-tab-bar>
+
+</ion-tabs>
+ </ion-toolbar> 

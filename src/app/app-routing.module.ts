@@ -11,6 +11,26 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'teams',
+    loadChildren: () => import('./teams/teams.module').then( m => m.TeamsPageModule)
+  },
+  {
+    path: 'player-records',
+    loadChildren: () => import('./player-records/player-records.module').then( m => m.PlayerRecordsPageModule)
+  },
+  {
+    path: 'team-records',
+    loadChildren: () => import('./team-records/team-records.module').then( m => m.TeamRecordsPageModule)
+  },
+  {
+    path: 'info',
+    loadChildren: () => import('./info/info.module').then( m => m.InfoPageModule)
+  },
+  {
+    path: 'flashlight',
+    loadChildren: () => import('./flashlight/flashlight.module').then( m => m.FlashlightPageModule)
+  },
 ];
 
 @NgModule({

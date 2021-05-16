@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Info & About</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-text color="dark">
+<h2>About the CFL</h2>
+  </ion-text>
+
+  <ion-text color="dark"><!--Provide a brief introduction and answers the question of what is the CFL-->
+    <p>The Canadian Football League (CFL) is a professional sports league in Canada. 
+      The CFL is the highest level of competition in Canadian football. 
+      The league consists of nine teams, each located in a city in Canada. 
+      They are divided into two divisions: four teams in the East Division and five teams in the West Division.</p>
+
+    <!--Contrasts the CFL with the most comparable large sport league, the NFL-->
+    <!--Giving new fans who may be familiar with the NFL a taste of what changes to expect-->
+      <h2>Differences between the CFL and NFL</h2>
+    <ion-list>
+      <p>1: The NFL offers higher salaries.</p>
+      <p>2:The CFL field is longer and wider.</p>
+      <p>3: The CFL allows for teams to have 12 players on the field as opposed to 11 in the NFL.</p>
+      <p>4: The CFL offers three downs per possession as opposed to the four downs allowed in the NFL.</p>
+      <p>5: There are different rules regarding the play clock and timeouts.</p>
+      <p>6: The CFL offers an additional method of scoring known as a single point.</p>
+      <p>7: There are different rules regarding the overtime format.</p>
+      <p>8: There is a difference in the in-season schedule and length.</p>
+      <p>9: There is a difference in the location of the field goal post.</p>
+      <p>10: The CFL does not have a fair catch rule.</p>
+    </ion-list>
+  </ion-text>
+
+
+</ion-content>
+<!--Navigation tab at bottom of the screen-->
+<ion-toolbar>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+  <!--Change page functions are called when the user presses a button, they are then redirected to the page-->
+      <ion-tab-button (click)="openTeams()">
+        <ion-icon name="shirt-outline"></ion-icon>
+        <ion-label>Teams</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button (click)="openTeamRecords()">
+        <ion-icon name="trophy-outline"></ion-icon>
+        <ion-label>Team Records</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button (click)="openHome()">
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-label>Home</ion-label>
+      </ion-tab-button>
+
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-toolbar>

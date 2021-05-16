@@ -1,20 +1,42 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Welcome to the CFL app!<!--This page greets the user when code is ran, hence it is the home page-->
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+
+<ion-content [fullscreen]="true">
+<!--Links to page which allows user to use the phones flashlight using cordova-->
+  <ion-button ion-item (click)="openFlashlight()"> Take Part in the <br> crowd flashlight tradition! </ion-button>
+  
+
+</ion-content>  
+
+<!--Tabs at bottom of screen to provide navigation to the other pages, once the buttons are clicked they call the function to change the page to the page specified by the user-->
+<ion-toolbar><!--The tabs are wrapped in a toolbar as the button above for the flashlight would not be clickable otherwise-->
+<ion-tabs>
+
+    <ion-tab-bar slot="bottom"><!--Positions tab bar at bottom of the phone screen-->
+
+      <ion-tab-button (click)="openTeams()"><!--Change page to list of teams-->
+        <ion-icon name="shirt-outline"></ion-icon>
+        <ion-label>Teams</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button (click)="openTeamRecords()"><!--Change page to list of teams and their overall record for the season-->
+        <ion-icon name="trophy-outline"></ion-icon>
+        <ion-label>Team Records</ion-label>
+      </ion-tab-button>
+          
+     <ion-tab-button (click)="openInfo()"><!--Change page to a quick overview on the CFL for the user to learn some more-->
+        <ion-icon name="information-circle"></ion-icon>
+        <ion-label>Info</ion-label>
+      </ion-tab-button> 
+      
+
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-toolbar>

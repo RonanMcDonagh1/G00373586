@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>teamRecords</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!--Standings information taken in from a CFL API using the standings.service service-->
+ <ion-list>
+  <ion-item *ngFor="let standings of StandingsData">
+    <ion-item-group>
+      <ion-item-divider>
+      <ion-label color="dark">{{standings.full_name}}</ion-label> <!--the teams full name gets taken from the standings array in the api and is displayed-->
+    </ion-item-divider>
+
+    <ion-item-divider>
+      <ion-text>
+        <p>Games Played: </p>
+      </ion-text>
+
+      <ion-label>{{standings.games_played}}</ion-label> <!--the teams number of games played gets taken from the standings array in the api and is displayed-->
+    </ion-item-divider>
+
+    <ion-item-divider>
+      <ion-text>
+        <p>Wins: </p>
+      </ion-text>
+      
+      <ion-label>{{standings.wins}}</ion-label> <!--the teams number of wins gets taken from the standings array in the api and is displayed-->
+    </ion-item-divider>
+
+    <ion-item-divider>
+      <ion-text>
+        <p>Losses: </p>
+      </ion-text>
+
+      <ion-label>{{standings.losses}}</ion-label> <!--the teams number of losses gets taken from the standings array in the api and is displayed-->
+    </ion-item-divider>
+
+    <ion-item-divider>
+      <ion-text>
+        <p>Ties: </p>
+      </ion-text>
+
+      <ion-label>{{standings.ties}}</ion-label> <!--the teams number of tied games gets taken from the standings array in the api and is displayed-->
+    </ion-item-divider>
+
+    <ion-item-divider>
+      <ion-text>
+        <p>points: </p>
+      </ion-text>
+
+      <ion-label>{{standings.points}}</ion-label> <!--the teams total number of points in the table gets taken from the standings array in the api and is displayed-->
+    </ion-item-divider>
+
+  </ion-item-group>
+  </ion-item>
+
+
+ </ion-list>
+ 
+ 
+  
+</ion-content> 
+
+<!--Tab bar at bottom of screen to provide navigation, the team-records page has been replaced with an option to return to the home screen-->
+<ion-toolbar>
+  <ion-tabs>
+  <ion-tab-bar slot="bottom">
+  <!--When button is clicked the function to change page is called and the user is redirected to the desired page-->
+      <ion-tab-button (click)="openTeams()">
+        <ion-icon name="shirt-outline"></ion-icon>
+        <ion-label>Teams</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button (click)="openHome()">
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-label>Home</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button (click)="openInfo()">
+        <ion-icon name="information-circle"></ion-icon>
+        <ion-label>Info</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-toolbar>
